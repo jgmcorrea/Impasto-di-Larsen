@@ -1,0 +1,426 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Impasto di Larsen — pizzas de fermentação natural feitas ao vivo no seu evento em Blumenau e região." />
+  <title>Impasto di Larsen | Pizza artesanal no seu evento</title>
+  <style>
+    :root {
+      --cream: #f8f1e7;
+      --paper: #fffaf3;
+      --ink: #24211d;
+      --muted: #6d665d;
+      --red: #b94b32;
+      --red-dark: #8f3524;
+      --olive: #596049;
+      --gold: #d69b4d;
+      --line: rgba(36, 33, 29, .13);
+      --shadow: 0 18px 55px rgba(52, 33, 19, .13);
+      --radius: 22px;
+    }
+
+    * { box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+    body {
+      margin: 0;
+      background: var(--cream);
+      color: var(--ink);
+      font-family: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      line-height: 1.5;
+    }
+    a { color: inherit; text-decoration: none; }
+    img { max-width: 100%; display: block; }
+    .container { width: min(1160px, calc(100% - 40px)); margin: 0 auto; }
+
+    .announcement {
+      background: var(--ink);
+      color: #fff7ed;
+      text-align: center;
+      font-size: 12px;
+      letter-spacing: .12em;
+      text-transform: uppercase;
+      padding: 10px 16px;
+    }
+
+    header {
+      position: absolute;
+      z-index: 5;
+      inset: 42px 0 auto;
+      color: white;
+    }
+    .nav {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 30px;
+      padding: 22px 0;
+    }
+    .brand {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      font-family: Georgia, serif;
+      font-size: 22px;
+      font-weight: 700;
+      letter-spacing: -.03em;
+    }
+    .brand-mark {
+      width: 38px;
+      height: 38px;
+      border: 1px solid rgba(255,255,255,.55);
+      border-radius: 50%;
+      display: grid;
+      place-items: center;
+      font-size: 17px;
+    }
+    .nav-links { display: flex; gap: 26px; font-size: 14px; }
+    .nav-links a { opacity: .88; transition: opacity .2s; }
+    .nav-links a:hover { opacity: 1; }
+    .nav-button {
+      border: 1px solid rgba(255,255,255,.5);
+      padding: 11px 16px;
+      border-radius: 999px;
+      font-size: 13px;
+      font-weight: 700;
+    }
+
+    .hero {
+      min-height: 760px;
+      color: white;
+      position: relative;
+      overflow: hidden;
+      background:
+        linear-gradient(90deg, rgba(26,20,14,.88) 0%, rgba(26,20,14,.55) 48%, rgba(26,20,14,.25) 100%),
+        radial-gradient(circle at 75% 48%, #d88b49 0 9%, #8a422d 27%, #34251e 65%, #171513 100%);
+    }
+    .hero::after {
+      content: "";
+      position: absolute;
+      inset: auto -5% -115px;
+      height: 210px;
+      background: var(--cream);
+      border-radius: 50% 50% 0 0 / 100% 100% 0 0;
+      transform: rotate(-2deg);
+    }
+    .hero-content {
+      position: relative;
+      z-index: 1;
+      padding-top: 210px;
+      max-width: 670px;
+    }
+    .eyebrow {
+      color: var(--gold);
+      text-transform: uppercase;
+      letter-spacing: .17em;
+      font-size: 12px;
+      font-weight: 800;
+      margin: 0 0 22px;
+    }
+    h1, h2, h3 { font-family: Georgia, "Times New Roman", serif; line-height: 1.05; margin: 0; }
+    h1 { font-size: clamp(48px, 7vw, 86px); letter-spacing: -.065em; max-width: 690px; }
+    .hero-copy { font-size: 19px; line-height: 1.6; color: rgba(255,255,255,.82); max-width: 560px; margin: 26px 0 34px; }
+    .actions { display: flex; align-items: center; flex-wrap: wrap; gap: 13px; }
+    .button {
+      display: inline-flex;
+      justify-content: center;
+      align-items: center;
+      gap: 8px;
+      border-radius: 999px;
+      padding: 15px 22px;
+      font-size: 14px;
+      font-weight: 800;
+      transition: transform .2s, background .2s;
+    }
+    .button:hover { transform: translateY(-2px); }
+    .button-primary { background: var(--red); color: white; }
+    .button-primary:hover { background: var(--red-dark); }
+    .button-light { border: 1px solid rgba(255,255,255,.45); color: white; }
+    .button-dark { background: var(--ink); color: white; }
+    .hero-note { margin-top: 38px; color: rgba(255,255,255,.7); font-size: 13px; }
+    .hero-note strong { color: white; }
+
+    section { padding: 105px 0; }
+    .section-top { display: flex; justify-content: space-between; align-items: end; gap: 40px; margin-bottom: 42px; }
+    .section-top h2 { font-size: clamp(38px, 5vw, 60px); letter-spacing: -.055em; max-width: 640px; }
+    .section-intro { color: var(--muted); max-width: 390px; font-size: 16px; }
+    .kicker { color: var(--red); font-size: 12px; font-weight: 900; letter-spacing: .14em; text-transform: uppercase; margin: 0 0 13px; }
+
+    .about-grid { display: grid; grid-template-columns: 1.04fr .96fr; gap: 70px; align-items: center; }
+    .about-visual {
+      min-height: 485px;
+      border-radius: var(--radius);
+      position: relative;
+      overflow: hidden;
+      background: radial-gradient(circle at 56% 48%, #eab36b 0 17%, #b85130 18% 32%, #653325 33% 55%, #2f2720 56% 100%);
+      box-shadow: var(--shadow);
+    }
+    .about-visual::before {
+      content: "";
+      position: absolute;
+      width: 260px; height: 260px;
+      right: 12%; top: 22%;
+      border-radius: 50%;
+      border: 24px solid rgba(255,228,166,.35);
+      box-shadow: 0 0 0 1px rgba(255,255,255,.08), 0 18px 40px rgba(0,0,0,.28);
+    }
+    .about-visual::after {
+      content: "FERMENTAÇÃO\A NATURAL";
+      white-space: pre;
+      position: absolute;
+      left: 30px; bottom: 29px;
+      color: white; opacity: .9;
+      font: 700 12px/1.6 Inter, sans-serif;
+      letter-spacing: .16em;
+    }
+    .about-copy h2 { font-size: clamp(40px, 5vw, 64px); letter-spacing: -.06em; margin-bottom: 24px; }
+    .about-copy p { font-size: 17px; color: var(--muted); max-width: 510px; }
+    .check-list { list-style: none; padding: 0; margin: 29px 0 0; display: grid; gap: 15px; }
+    .check-list li { display: flex; gap: 11px; align-items: center; font-weight: 700; }
+    .check-list li::before { content: "✓"; display: grid; place-items: center; width: 22px; height: 22px; border-radius: 50%; background: var(--olive); color: white; font-size: 12px; }
+
+    .dark-section { background: var(--ink); color: white; }
+    .dark-section .section-intro { color: rgba(255,255,255,.64); }
+    .dark-section .kicker { color: var(--gold); }
+    .steps { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1px; background: rgba(255,255,255,.14); border: 1px solid rgba(255,255,255,.14); }
+    .step { padding: 34px 30px 38px; background: var(--ink); min-height: 245px; }
+    .step-number { color: var(--gold); font: 500 45px Georgia, serif; }
+    .step h3 { font-size: 25px; margin: 28px 0 13px; }
+    .step p { color: rgba(255,255,255,.62); margin: 0; font-size: 15px; }
+
+    .packages { background: #efe3d4; }
+    .package-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 18px; }
+    .package { background: var(--paper); border: 1px solid var(--line); padding: 30px; border-radius: 18px; position: relative; }
+    .package.featured { background: var(--red); color: white; transform: translateY(-12px); border-color: transparent; box-shadow: 0 22px 45px rgba(147, 57, 37, .22); }
+    .popular { position: absolute; top: 17px; right: 17px; font-size: 10px; font-weight: 900; letter-spacing: .1em; text-transform: uppercase; color: var(--red); background: #f6dfbc; padding: 7px 9px; border-radius: 999px; }
+    .package.featured .popular { color: var(--ink); }
+    .package h3 { font-size: 32px; margin-bottom: 9px; }
+    .package .people { color: var(--muted); font-size: 14px; }
+    .package.featured .people, .package.featured .package-description { color: rgba(255,255,255,.76); }
+    .package-description { color: var(--muted); min-height: 70px; font-size: 15px; }
+    .package ul { list-style: none; padding: 20px 0 5px; border-top: 1px solid var(--line); margin: 21px 0 0; display: grid; gap: 11px; font-size: 14px; }
+    .package.featured ul { border-color: rgba(255,255,255,.24); }
+    .package li::before { content: "•"; color: var(--red); font-weight: 900; margin-right: 8px; }
+    .package.featured li::before { color: var(--gold); }
+
+    .gallery-grid { display: grid; grid-template-columns: 1.1fr .9fr .9fr; grid-template-rows: 210px 210px; gap: 15px; }
+    .gallery-card { border-radius: 17px; overflow: hidden; position: relative; background: #5a3827; }
+    .gallery-card:nth-child(1) { grid-row: span 2; background: radial-gradient(circle at 48% 51%, #efc16f 0 20%, #a9442b 21% 37%, #5c3025 38% 57%, #33261f 58%); }
+    .gallery-card:nth-child(2) { background: linear-gradient(145deg, #b97948, #30231c); }
+    .gallery-card:nth-child(3) { background: linear-gradient(135deg, #79825b, #252a20); }
+    .gallery-card:nth-child(4) { background: linear-gradient(145deg, #d89b5d, #713522); }
+    .gallery-card::after { content: attr(data-label); position: absolute; left: 17px; bottom: 15px; color: white; font-weight: 800; font-size: 12px; letter-spacing: .08em; text-transform: uppercase; text-shadow: 0 1px 6px #000; }
+
+    .quote { padding: 100px 0 115px; text-align: center; background: var(--paper); }
+    .quote-mark { color: var(--red); font: 70px Georgia, serif; height: 55px; }
+    blockquote { max-width: 820px; margin: 0 auto 25px; font: 500 clamp(29px, 4vw, 48px)/1.13 Georgia, serif; letter-spacing: -.04em; }
+    .quote cite { color: var(--muted); font-size: 14px; font-style: normal; }
+
+    .reviews { background: #f1e6d8; }
+    .rating-summary { display: flex; align-items: center; gap: 14px; color: var(--muted); font-size: 14px; }
+    .stars { color: var(--gold); letter-spacing: .12em; font-size: 20px; }
+    .review-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 18px; }
+    .review-card { background: var(--paper); border: 1px solid var(--line); border-radius: 18px; padding: 28px; min-height: 245px; display: flex; flex-direction: column; justify-content: space-between; }
+    .review-card blockquote { font: 500 21px/1.3 Georgia, serif; letter-spacing: -.025em; margin: 20px 0 25px; }
+    .review-author { display: flex; align-items: center; gap: 11px; font-size: 13px; font-weight: 800; }
+    .avatar { width: 36px; height: 36px; border-radius: 50%; display: grid; place-items: center; background: var(--olive); color: white; font: 700 13px Georgia, serif; }
+    .faq-section { background: var(--paper); }
+    .faq-grid { display: grid; grid-template-columns: .8fr 1.2fr; gap: 80px; align-items: start; }
+    .faq-grid h2 { font-size: clamp(40px, 5vw, 62px); letter-spacing: -.06em; }
+    .faq-list { border-top: 1px solid var(--line); }
+    .faq-item { border-bottom: 1px solid var(--line); }
+    .faq-item summary { cursor: pointer; list-style: none; padding: 22px 38px 22px 0; font: 700 19px Georgia, serif; position: relative; }
+    .faq-item summary::-webkit-details-marker { display: none; }
+    .faq-item summary::after { content: "+"; position: absolute; right: 4px; top: 18px; font: 400 27px Georgia, serif; color: var(--red); transition: transform .2s; }
+    .faq-item[open] summary::after { transform: rotate(45deg); }
+    .faq-item p { color: var(--muted); max-width: 650px; margin: -5px 0 22px; font-size: 15px; }
+
+    .cta { padding: 90px 0; background: var(--olive); color: white; }
+    .cta-inner { display: flex; justify-content: space-between; align-items: center; gap: 35px; }
+    .cta h2 { font-size: clamp(37px, 5vw, 62px); letter-spacing: -.06em; max-width: 630px; }
+    .cta p { color: rgba(255,255,255,.75); max-width: 520px; margin: 18px 0 0; }
+    .cta .button-primary { background: white; color: var(--ink); white-space: nowrap; }
+
+    footer { background: #171613; color: white; padding: 45px 0 30px; }
+    .footer-grid { display: flex; justify-content: space-between; gap: 30px; padding-bottom: 36px; border-bottom: 1px solid rgba(255,255,255,.14); }
+    .footer-brand p { color: rgba(255,255,255,.58); max-width: 280px; font-size: 14px; }
+    .footer-links { display: flex; gap: 55px; font-size: 14px; }
+    .footer-links div { display: grid; gap: 11px; }
+    .footer-links strong { color: var(--gold); font-size: 11px; letter-spacing: .13em; text-transform: uppercase; }
+    .footer-links a { color: rgba(255,255,255,.7); }
+    .copyright { display: flex; justify-content: space-between; padding-top: 24px; color: rgba(255,255,255,.4); font-size: 12px; }
+
+    @media (max-width: 820px) {
+      .nav-links { display: none; }
+      .hero { min-height: 700px; }
+      .hero-content { padding-top: 175px; }
+      .about-grid { grid-template-columns: 1fr; gap: 42px; }
+      .about-visual { min-height: 350px; }
+      .steps, .package-grid { grid-template-columns: 1fr; }
+      .review-grid { grid-template-columns: 1fr; }
+      .faq-grid { grid-template-columns: 1fr; gap: 35px; }
+      .package.featured { transform: none; }
+      .section-top, .cta-inner { display: block; }
+      .section-intro { margin-top: 20px; }
+      .cta .button { margin-top: 28px; }
+      .gallery-grid { grid-template-columns: 1fr 1fr; grid-template-rows: 240px 170px 170px; }
+      .gallery-card:nth-child(1) { grid-row: span 1; grid-column: span 2; }
+      .footer-grid, .copyright { display: block; }
+      .footer-links { margin-top: 28px; gap: 35px; flex-wrap: wrap; }
+      .copyright p:last-child { margin-top: 8px; }
+    }
+    @media (max-width: 480px) {
+      .container { width: min(100% - 28px, 1160px); }
+      section { padding: 76px 0; }
+      .brand { font-size: 18px; }
+      .nav-button { padding: 9px 12px; font-size: 11px; }
+      .hero-copy { font-size: 17px; }
+      .actions .button { width: 100%; }
+      .gallery-grid { gap: 9px; }
+    }
+  </style>
+</head>
+<body>
+  <div class="announcement">Pizza de fermentação natural feita ao vivo · Blumenau e região</div>
+
+  <header>
+    <div class="container nav">
+      <a href="#inicio" class="brand"><span class="brand-mark">IL</span> Impasto di Larsen</a>
+      <nav class="nav-links" aria-label="Navegação principal">
+        <a href="#experiencia">A experiência</a>
+        <a href="#como-funciona">Como funciona</a>
+        <a href="#formatos">Formatos</a>
+        <a href="#avaliacoes">Avaliações</a>
+        <a href="#faq">FAQ</a>
+      </nav>
+      <a class="nav-button" href="#orcamento">Pedir orçamento</a>
+    </div>
+  </header>
+
+  <main>
+    <section class="hero" id="inicio">
+      <div class="container hero-content">
+        <p class="eyebrow">Uma pizzaria itinerante para o seu evento</p>
+        <h1>A pizza vira parte da festa.</h1>
+        <p class="hero-copy">Massas de fermentação natural, ingredientes escolhidos e pizzas de 25 cm abertas, recheadas e assadas na hora — na sua casa, do seu jeito.</p>
+        <div class="actions">
+          <a class="button button-primary" href="#orcamento">Quero levar a Impasto</a>
+          <a class="button button-light" href="#como-funciona">Descobrir como funciona ↓</a>
+        </div>
+        <p class="hero-note"><strong>Atendemos Blumenau e região.</strong> Eventos para 10, 20, 30 pessoas ou sob medida.</p>
+      </div>
+    </section>
+
+    <section id="experiencia">
+      <div class="container about-grid">
+        <div class="about-visual" aria-label="Imagem ilustrativa de pizza artesanal assada"></div>
+        <div class="about-copy">
+          <p class="kicker">Mais do que jantar</p>
+          <h2>Um ritual gostoso, feito na frente dos seus convidados.</h2>
+          <p>A gente chega com tudo preparado: as massas já fermentadas, os recheios e a estrutura para assar. No evento, cada pizza ganha forma diante dos olhos — e sai do forno no ponto certo, uma por uma.</p>
+          <ul class="check-list">
+            <li>Massa de longa fermentação</li>
+            <li>Pizzas individuais de 25 cm</li>
+            <li>Experiência descontraída e interativa</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <section class="dark-section" id="como-funciona">
+      <div class="container">
+        <div class="section-top">
+          <div>
+            <p class="kicker">Do forno para a memória</p>
+            <h2>Você recebe. A gente cuida do resto.</h2>
+          </div>
+          <p class="section-intro">A experiência é pensada para deixar o anfitrião livre para aproveitar cada momento com seus convidados.</p>
+        </div>
+        <div class="steps">
+          <article class="step"><span class="step-number">01</span><h3>Chegamos preparados</h3><p>Levamos massas já fermentadas, ingredientes selecionados, utensílios e o forno para o seu evento.</p></article>
+          <article class="step"><span class="step-number">02</span><h3>Cada um escolhe</h3><p>As massas são abertas na hora. Os convidados montam suas combinações favoritas ou escolhem entre nossas sugestões.</p></article>
+          <article class="step"><span class="step-number">03</span><h3>Assamos e celebramos</h3><p>Pizza saindo quentinha, em um fluxo gostoso e sem pressa. Enquanto uma assa, outra já começa a nascer.</p></article>
+        </div>
+      </div>
+    </section>
+
+    <section class="packages" id="formatos">
+      <div class="container">
+        <div class="section-top">
+          <div><p class="kicker">Escolha o tamanho da sua festa</p><h2>Um formato para cada encontro.</h2></div>
+          <p class="section-intro">Os formatos são um ponto de partida. Conte o que você está imaginando e montamos uma experiência sob medida.</p>
+        </div>
+        <div class="package-grid">
+          <article class="package"><h3>Encontro</h3><div class="people">Até 10 pessoas</div><p class="package-description">Para comemorar pequeno, com quem realmente importa — e muita pizza boa.</p><ul><li>Massas e ingredientes</li><li>Montagem e forno no local</li><li>Atendimento personalizado</li></ul></article>
+          <article class="package featured"><span class="popular">Mais escolhido</span><h3>Festa</h3><div class="people">Até 20 pessoas</div><p class="package-description">O tamanho ideal para aniversários, jantares especiais e reuniões com amigos.</p><ul><li>Massas e ingredientes</li><li>Montagem e forno no local</li><li>Cardápio combinado</li></ul></article>
+          <article class="package"><h3>Celebrar</h3><div class="people">Até 30 pessoas</div><p class="package-description">Para reunir a turma toda e transformar o jantar no ponto alto do evento.</p><ul><li>Massas e ingredientes</li><li>Montagem e forno no local</li><li>Planejamento do fluxo do evento</li></ul></article>
+        </div>
+      </div>
+    </section>
+
+    <section>
+      <div class="container">
+        <div class="section-top"><div><p class="kicker">Feito para compartilhar</p><h2>Tem sabor, tem conversa, tem história.</h2></div><p class="section-intro">Uma noite de pizza artesanal combina com aniversários, casamentos intimistas, eventos corporativos e aquele encontro que não precisa de motivo.</p></div>
+        <div class="gallery-grid" aria-label="Galeria ilustrativa da experiência Impasto di Larsen">
+          <div class="gallery-card" data-label="Massa de longa fermentação"></div>
+          <div class="gallery-card" data-label="Ingredientes frescos"></div>
+          <div class="gallery-card" data-label="Feito ao vivo"></div>
+          <div class="gallery-card" data-label="Forno aceso"></div>
+        </div>
+      </div>
+    </section>
+
+    <section class="quote">
+      <div class="container">
+        <div class="quote-mark">“</div>
+        <blockquote>Não é só pedir pizza. É ver a pizza acontecer — e comer no minuto mais gostoso possível.</blockquote>
+        <cite>— A experiência Impasto di Larsen</cite>
+      </div>
+    </section>
+
+    <section class="reviews" id="avaliacoes">
+      <div class="container">
+        <div class="section-top">
+          <div><p class="kicker">Quem já viveu a experiência</p><h2>O melhor comentário é a mesa pedindo mais uma.</h2></div>
+          <div class="rating-summary"><span class="stars">★★★★★</span><span>5,0 de avaliação média</span></div>
+        </div>
+        <div class="review-grid">
+          <article class="review-card"><div><div class="stars">★★★★★</div><blockquote>“A pizza foi o ponto alto da noite. Todo mundo adorou acompanhar o preparo e comer uma pizza quentinha atrás da outra.”</blockquote></div><div class="review-author"><span class="avatar">MC</span><span>Marina C.<br><small>Jantar em Blumenau</small></span></div></article>
+          <article class="review-card"><div><div class="stars">★★★★★</div><blockquote>“Contratar a Impasto deixou nosso aniversário muito mais especial. A equipe foi atenciosa, organizada e a massa é incrível.”</blockquote></div><div class="review-author"><span class="avatar">RA</span><span>Rafael A.<br><small>Festa de aniversário</small></span></div></article>
+          <article class="review-card"><div><div class="stars">★★★★★</div><blockquote>“Foi uma experiência deliciosa e diferente. Os convidados elogiaram muito — até quem disse que não comeria mais acabou pedindo outra.”</blockquote></div><div class="review-author"><span class="avatar">LS</span><span>Letícia S.<br><small>Evento entre amigos</small></span></div></article>
+        </div>
+      </div>
+    </section>
+
+    <section class="faq-section" id="faq">
+      <div class="container faq-grid">
+        <div><p class="kicker">Ainda ficou com dúvida?</p><h2>Perguntas que sempre aparecem.</h2></div>
+        <div class="faq-list">
+          <details class="faq-item" open><summary>Vocês levam tudo para o evento?</summary><p>Sim. Levamos as massas já fermentadas, ingredientes, utensílios e a estrutura necessária para abrir, montar e assar as pizzas no local.</p></details>
+          <details class="faq-item"><summary>As pizzas são individuais?</summary><p>Sim. Cada pizza tem aproximadamente 25 cm, um tamanho ideal para que cada convidado escolha seus sabores e experimente diferentes combinações.</p></details>
+          <details class="faq-item"><summary>Atendem apenas Blumenau?</summary><p>Atendemos Blumenau e cidades da região. Envie o local do evento para verificarmos a disponibilidade e possíveis condições de deslocamento.</p></details>
+          <details class="faq-item"><summary>Posso escolher os sabores?</summary><p>Claro. Montamos o cardápio junto com você, considerando o perfil dos convidados e opções variadas para agradar diferentes gostos.</p></details>
+          <details class="faq-item"><summary>Com quanto tempo devo reservar?</summary><p>Quanto antes, melhor — especialmente para finais de semana e datas comemorativas. Fale com a gente para consultar a agenda da sua data.</p></details>
+        </div>
+      </div>
+    </section>
+
+    <section class="cta" id="orcamento">
+      <div class="container cta-inner">
+        <div><p class="kicker">Vamos fazer acontecer?</p><h2>Seu próximo evento merece uma pizza feita na hora.</h2><p>Fale com a gente e conte a data, o local e o número de convidados. Retornamos com uma proposta para o seu encontro.</p></div>
+        <a class="button button-primary" href="https://wa.me/5547999999999?text=Olá!%20Quero%20um%20orçamento%20da%20Impasto%20di%20Larsen." target="_blank" rel="noopener">Chamar no WhatsApp ↗</a>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-brand"><a href="#inicio" class="brand"><span class="brand-mark">IL</span> Impasto di Larsen</a><p>Pizza artesanal de fermentação natural, feita ao vivo no seu evento.</p></div>
+        <div class="footer-links"><div><strong>Explore</strong><a href="#experiencia">A experiência</a><a href="#como-funciona">Como funciona</a><a href="#formatos">Formatos</a><a href="#avaliacoes">Avaliações</a><a href="#faq">FAQ</a></div><div><strong>Fale com a gente</strong><a href="#orcamento">Orçamento</a><a href="https://instagram.com" target="_blank" rel="noopener">Instagram ↗</a><span>Blumenau/SC e região</span></div></div>
+      </div>
+      <div class="copyright"><span>© 2026 Impasto di Larsen</span><span>Feito para comer junto.</span></div>
+    </div>
+  </footer>
+</body>
+</html>
