@@ -30,7 +30,12 @@ function handleSubmit(event) {
   return false;
 }
 
-const revealItems = document.querySelectorAll('.experience-card, .process-copy, .chef-copy, .chef-portrait, .contact-form');
+document.querySelectorAll('[data-interest]').forEach(link => link.addEventListener('click', () => {
+  const select = document.querySelector('.contact-form select[name="interest"]');
+  if (select) select.value = link.dataset.interest;
+}));
+
+const revealItems = document.querySelectorAll('.experience-card, .frozen-visual, .frozen-copy, .process-copy, .chef-copy, .chef-portrait, .contact-form');
 const observer = new IntersectionObserver((entries) => {
   entries.forEach(entry => {
     if (entry.isIntersecting) {
