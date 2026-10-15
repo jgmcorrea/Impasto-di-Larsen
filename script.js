@@ -35,6 +35,20 @@ document.querySelectorAll('[data-interest]').forEach(link => link.addEventListen
   if (select) select.value = link.dataset.interest;
 }));
 
+const galleryTrack = document.querySelector('.gallery-track');
+if (galleryTrack) {
+  document.querySelectorAll('.gallery-arrow').forEach(btn => btn.addEventListener('click', () => {
+    const dir = parseInt(btn.dataset.dir, 10);
+    galleryTrack.scrollBy({ left: dir * 320, behavior: 'smooth' });
+  }));
+  galleryTrack.addEventListener('wheel', (event) => {
+    if (Math.abs(event.deltaY) > Math.abs(event.deltaX)) {
+      event.preventDefault();
+      galleryTrack.scrollLeft += event.deltaY;
+    }
+  }, { passive: false });
+}
+
 const revealItems = document.querySelectorAll('.experience-card, .frozen-visual, .frozen-copy, .process-copy, .chef-copy, .chef-portrait, .contact-form');
 const observer = new IntersectionObserver((entries) => {
   entries.forEach(entry => {

@@ -97,6 +97,7 @@ img { display: block; max-width: 100%; }
 .process { background: #16130f; display: grid; grid-template-columns: 1fr 1fr; min-height: 675px; padding-left: 0; }
 .process-image { overflow: hidden; }
 .process-image img { filter: saturate(.65); height: 100%; object-fit: cover; width: 100%; }
+.process-image video { display: block; filter: saturate(.65); height: 100%; margin: 0 auto; max-width: 420px; object-fit: contain; width: 100%; }
 .process-copy { align-self: center; padding: 80px 12vw 80px 8vw; }
 .light { color: #aaa093; }
 .process h2 { font-size: clamp(46px, 5.3vw, 80px); margin: 35px 0; }
@@ -106,6 +107,17 @@ img { display: block; max-width: 100%; }
 .process-stats strong { color: var(--gold-light); font-family: var(--serif); font-size: 33px; font-weight: 400; }
 .process-stats span { color: #9d9387; font-size: 9px; line-height: 1.35; padding-top: 7px; text-transform: uppercase; }
 .light-link { color: var(--cream); }
+.gallery { background: var(--ink); padding-bottom: 115px; padding-top: 92px; }
+.gallery-head { align-items: flex-end; display: flex; gap: 32px; justify-content: space-between; margin-top: 16px; }
+.gallery-head h2 { font-family: var(--serif); font-size: clamp(42px, 5.2vw, 76px); font-weight: 400; letter-spacing: -.04em; line-height: .95; margin: 0; }
+.gallery-arrows { display: flex; flex-shrink: 0; gap: 12px; }
+.gallery-arrow { align-items: center; background: transparent; border: 1px solid rgba(201,162,78,.5); border-radius: 50%; color: var(--gold-light); cursor: pointer; display: flex; font-size: 18px; height: 48px; justify-content: center; transition: background .2s, color .2s; width: 48px; }
+.gallery-arrow:hover { background: var(--gold); color: var(--ink); }
+.gallery-track { display: flex; gap: 18px; margin-top: 48px; overflow-x: auto; padding-bottom: 14px; scroll-behavior: smooth; scroll-snap-type: x mandatory; }
+.gallery-track img { aspect-ratio: 3 / 4; border-radius: 14px; flex: 0 0 auto; height: 380px; object-fit: cover; scroll-snap-align: start; width: 290px; }
+.gallery-track::-webkit-scrollbar { height: 6px; }
+.gallery-track::-webkit-scrollbar-thumb { background: rgba(201,162,78,.4); border-radius: 10px; }
+.gallery-track::-webkit-scrollbar-track { background: transparent; }
 .chef { background: var(--cream); color: var(--ink); padding-bottom: 125px; padding-top: 92px; }
 .chef-grid { display: grid; grid-template-columns: 1fr 1fr; margin-top: 82px; }
 .chef-copy { max-width: 455px; padding-top: 28px; }
@@ -193,7 +205,12 @@ img { display: block; max-width: 100%; }
   .hero-stamp strong { font-size: 13px; }
   .hero-stamp small { font-size: 6px; }
   .hero-caption { bottom: 7%; font-size: 8px; }
-  .intro, .chef, .faq, .frozen { padding-bottom: 80px; padding-top: 64px; }
+  .intro, .chef, .faq, .frozen, .gallery { padding-bottom: 80px; padding-top: 64px; }
+  .gallery-head { align-items: flex-start; flex-direction: column; gap: 20px; }
+  .gallery-head h2 { font-size: 46px; }
+  .gallery-track { margin-top: 32px; }
+  .gallery-track img { height: 280px; width: 215px; }
+  .gallery-arrow { height: 42px; width: 42px; }
   .frozen-grid { margin-top: 40px; }
   .frozen h2 { font-size: 53px; }
   .frozen-item h3 { font-size: 26px; }
@@ -220,8 +237,11 @@ img { display: block; max-width: 100%; }
   .chef-portrait { height: 390px; margin-top: 50px; }
   .contact { padding-bottom: 80px; padding-top: 75px; }
   .contact h2 { font-size: 54px; }
-  .footer-meta { align-items: flex-start; flex-direction: column; gap: 12px; margin-top: 30px; padding-left: 0; }
-  .back-top { margin-left: 0; }
-  .footer-bottom { flex-direction: column; gap: 8px; margin-top: 25px; }
+  .footer-meta { align-items: flex-start; grid-template-columns: 1fr; gap: 12px; margin-top: 30px; }
+  .footer-meta span:first-child { grid-column: 1; justify-self: start; }
+  .back-top { grid-column: 1; justify-self: start; }
+  .footer-bottom { grid-template-columns: 1fr; gap: 8px; margin-top: 25px; }
+  .footer-bottom span:nth-child(2) { justify-self: start; }
+  .footer-bottom a { justify-self: start; }
   .footer-brand img { height: 74px; width: 74px; }
 }
