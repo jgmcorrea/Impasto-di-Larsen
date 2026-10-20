@@ -137,7 +137,7 @@ img { display: block; max-width: 100%; }
 .chef-copy .button { margin-top: 25px; }
 .chef-portrait { background: linear-gradient(135deg, #2b2b26, #17140f); height: 520px; justify-self: end; overflow: hidden; position: relative; width: min(100%, 480px); }
 .chef-portrait img { filter: saturate(.88); height: 100%; object-fit: cover; object-position: center 18%; width: 100%; }
-.chef-portrait:after { background: radial-gradient(ellipse at 50% 30%, rgba(200,167,104,.32), transparent 34%), linear-gradient(115deg, transparent 35%, rgba(180,139,67,.26) 35% 37%, transparent 37%), linear-gradient(0deg, rgba(13,13,13,.55), transparent 38%); content: ''; inset: 0; position: absolute; }
+.chef-portrait:after { background: radial-gradient(ellipse at 50% 30%, rgba(200,167,104,.22), transparent 34%), linear-gradient(0deg, rgba(13,13,13,.55), transparent 38%); content: ''; inset: 0; position: absolute; }
 .portrait-inner { border: 1px solid rgba(201,162,78,.6); bottom: 22px; color: var(--gold-light); left: 22px; padding: 16px; position: absolute; right: 22px; }
 .portrait-mark { font-family: var(--serif); font-size: 35px; letter-spacing: .13em; }
 .portrait-inner span { font-size: 9px; letter-spacing: .15em; text-transform: uppercase; }
