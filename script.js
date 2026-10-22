@@ -11,12 +11,37 @@ document.querySelectorAll('.nav a').forEach(link => link.addEventListener('click
 
 const WHATSAPP_NUMBER = '5547996004771';
 
+// Conversões do Google Ads. Quando as ações de conversão forem criadas no
+// Google Ads, colar aqui o rótulo de cada uma (a parte depois da barra em
+// "AW-18531132535/rótulo"). Enquanto estiver vazio, o evento é enviado mesmo
+// assim e pode ser usado como conversão pelo GA4.
+const GOOGLE_ADS_ID = 'AW-18531132535';
+const CONVERSOES = {
+  orcamento_evento: '',
+  pedido_congelados: ''
+};
+
+function registrarConversao(nomeEvento, interesse) {
+  if (typeof gtag !== 'function') return;
+  gtag('event', nomeEvento, { interesse });
+  const rotulo = CONVERSOES[nomeEvento];
+  if (rotulo) {
+    gtag('event', 'conversion', { send_to: `${GOOGLE_ADS_ID}/${rotulo}` });
+  }
+}
+
 function handleSubmit(event) {
   event.preventDefault();
   const form = event.currentTarget;
   const name = form.elements.name.value.trim();
   const interest = form.elements.interest.value;
   const message = form.elements.message.value.trim();
+
+  if (interest === 'Experiência para evento') {
+    registrarConversao('orcamento_evento', interest);
+  } else if (interest === 'Congelados') {
+    registrarConversao('pedido_congelados', interest);
+  }
 
   let text = `Olá! Meu nome é ${name}.`;
   text += `\nInteresse: ${interest}`;
@@ -34,6 +59,21 @@ document.querySelectorAll('[data-interest]').forEach(link => link.addEventListen
   const select = document.querySelector('.contact-form select[name="interest"]');
   if (select) select.value = link.dataset.interest;
 }));
+
+// Sitelink "Encomendar congelados" do Google Ads: #contato?c=congelados
+// já abre o formulário com "Congelados" selecionado.
+function aplicarInteresseDaUrl() {
+  const hash = window.location.hash;
+  if (!hash.startsWith('#contato')) return;
+  const params = new URLSearchParams(hash.split('?')[1] || '');
+  const select = document.querySelector('.contact-form select[name="interest"]');
+  if (select && params.get('c') === 'congelados') select.value = 'Congelados';
+  if (select && params.get('c') === 'evento') select.value = 'Experiência para evento';
+  const contato = document.getElementById('contato');
+  if (contato && hash !== '#contato') contato.scrollIntoView();
+}
+aplicarInteresseDaUrl();
+window.addEventListener('hashchange', aplicarInteresseDaUrl);
 
 const galleryTrack = document.querySelector('.gallery-track');
 if (galleryTrack) {
