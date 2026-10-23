@@ -17,8 +17,8 @@ const WHATSAPP_NUMBER = '5547996004771';
 // assim e pode ser usado como conversão pelo GA4.
 const GOOGLE_ADS_ID = 'AW-18531132535';
 const CONVERSOES = {
-  orcamento_evento: '',
-  pedido_congelados: ''
+  orcamento_evento: 'r7R2CKeigqcdEPfIqoRF',
+  pedido_congelados: 'ogXDCICE-6YdEPfIqoRF'
 };
 
 function registrarConversao(nomeEvento, interesse) {
