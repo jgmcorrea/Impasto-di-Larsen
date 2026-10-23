@@ -99,3 +99,25 @@ const observer = new IntersectionObserver((entries) => {
   });
 }, { threshold: 0.12 });
 revealItems.forEach(item => observer.observe(item));
+
+// Vídeo da seção "O impasto": só baixa quando a pessoa chega perto da seção,
+// para não pesar o carregamento da página no celular.
+const lazyVideo = document.querySelector('video[data-src]');
+if (lazyVideo) {
+  const carregarVideo = () => {
+    if (lazyVideo.src) return;
+    lazyVideo.src = lazyVideo.dataset.src;
+    lazyVideo.play().catch(() => {});
+  };
+  if ('IntersectionObserver' in window) {
+    const videoObserver = new IntersectionObserver((entries) => {
+      if (entries.some(e => e.isIntersecting)) {
+        carregarVideo();
+        videoObserver.disconnect();
+      }
+    }, { rootMargin: '300px 0px' });
+    videoObserver.observe(lazyVideo);
+  } else {
+    carregarVideo();
+  }
+}
