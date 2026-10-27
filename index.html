@@ -18,8 +18,8 @@
   <meta property="og:description" content="A arte começa no impasto. Uma experiência de pizza napoletana preparada ao vivo ou na sua casa." />
   <meta property="og:type" content="website" />
   <meta property="og:locale" content="pt_BR" />
-  <meta property="og:url" content="https://jgmcorrea.github.io/Impasto-di-Larsen/" />
-  <meta property="og:image" content="https://jgmcorrea.github.io/Impasto-di-Larsen/assets/logo-impasto.jpeg" />
+  <meta property="og:url" content="https://impastodilarsen.com.br/" />
+  <meta property="og:image" content="https://impastodilarsen.com.br/assets/logo-impasto.jpeg" />
   <meta property="og:image:width" content="1254" />
   <meta property="og:image:height" content="1254" />
   <meta property="og:site_name" content="Impasto di Larsen" />
@@ -32,7 +32,9 @@
   <link rel="shortcut icon" href="favicon.ico" type="image/x-icon" />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Italiana&family=Manrope:wght@400;500;600;700&display=swap" rel="stylesheet" />
+  <link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Italiana&family=Manrope:wght@400;500;600;700&display=swap" onload="this.onload=null;this.rel='stylesheet'" />
+  <noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Italiana&family=Manrope:wght@400;500;600;700&display=swap" /></noscript>
+  <link rel="preload" as="image" href="assets/pizza-real-520.webp" imagesrcset="assets/pizza-real-520.webp 520w, assets/pizza-real-900.webp 900w" imagesizes="(max-width: 600px) 255px, (max-width: 1000px) 360px, 490px" fetchpriority="high" />
   <link rel="stylesheet" href="styles.css" />
 </head>
 <body>
@@ -68,7 +70,7 @@
       </div>
       <div class="hero-visual">
         <div class="hero-orbit"></div>
-        <div class="hero-image-wrap"><img src="assets/pizza-real.jpeg" alt="Forno de pizza da Impasto di Larsen em funcionamento" /></div>
+        <div class="hero-image-wrap"><img src="assets/pizza-real-900.webp" srcset="assets/pizza-real-520.webp 520w, assets/pizza-real-900.webp 900w" sizes="(max-width: 600px) 255px, (max-width: 1000px) 360px, 490px" width="900" height="1199" fetchpriority="high" decoding="async" alt="Pizza napoletana da Impasto di Larsen saindo do forno" /></div>
         <div class="hero-stamp"><span>Impasto</span><strong>di Larsen</strong><small>Pizza Napoletana</small></div>
         <div class="hero-caption">01 / A experiência começa<br /><span>na massa</span></div>
       </div>
@@ -81,8 +83,8 @@
         <div class="intro-copy"><p>A mesma técnica, a mesma massa, a mesma assinatura gastronômica em dois formatos.</p><p class="muted">Para eventos, o forno chega até você. Para casa, a experiência continua com a nossa linha de congelados: pizza napoletana já assada e congelada, pronta para aquecer, e nhoque artesanal, com e sem recheio — feitos à mão, esperando pelo seu toque.</p></div>
       </div>
       <div class="experience-grid">
-        <article class="experience-card card-event"><div class="card-image"><img src="assets/forno.jpg" alt="Pizza napoletana da Impasto com presunto cru e pesto" /><span class="card-number">01</span></div><div class="card-content"><div class="card-type">Experiência presencial</div><h3>Eventos</h3><p>Pizza napoletana preparada ao vivo pelo Chef Ivo Larsen Junior, na sua casa, empresa ou celebração.</p><a href="#contato" class="arrow-link">Levar o forno até você <span>↗</span></a></div></article>
-        <article class="experience-card card-frozen"><div class="card-image"><img src="assets/pizza-vacuo.jpg" alt="Pizza napoletana congelada, pronta para aquecer, embalada a vácuo com o selo Impasto di Larsen" /><span class="card-number">02</span></div><div class="card-content"><div class="card-type">Para finalizar em casa</div><h3>Congeladas</h3><p>Pizza napoletana já assada e congelada, pronta para aquecer, e nhoque artesanal, com e sem recheio — para levar a assinatura da Impasto para a sua casa.</p><a href="#congelados" class="arrow-link">Conhecer a linha <span>↓</span></a></div></article>
+        <article class="experience-card card-event"><div class="card-image"><img src="assets/forno.webp" width="612" height="408" loading="lazy" decoding="async" alt="Pizza napoletana da Impasto com presunto cru e pesto" /><span class="card-number">01</span></div><div class="card-content"><div class="card-type">Experiência presencial</div><h3>Eventos</h3><p>Pizza napoletana preparada ao vivo pelo Chef Ivo Larsen Junior, na sua casa, empresa ou celebração.</p><a href="#contato" class="arrow-link">Levar o forno até você <span>↗</span></a></div></article>
+        <article class="experience-card card-frozen"><div class="card-image"><img src="assets/pizza-vacuo-800.webp" srcset="assets/pizza-vacuo-800.webp 800w, assets/pizza-vacuo-1200.webp 1200w" sizes="(max-width: 700px) 100vw, 50vw" width="1200" height="900" loading="lazy" decoding="async" alt="Pizza napoletana congelada, pronta para aquecer, embalada a vácuo com o selo Impasto di Larsen" /><span class="card-number">02</span></div><div class="card-content"><div class="card-type">Para finalizar em casa</div><h3>Congeladas</h3><p>Pizza napoletana já assada e congelada, pronta para aquecer, e nhoque artesanal, com e sem recheio — para levar a assinatura da Impasto para a sua casa.</p><a href="#congelados" class="arrow-link">Conhecer a linha <span>↓</span></a></div></article>
       </div>
     </section>
 
@@ -90,7 +92,7 @@
       <div class="section-kicker"><span>02</span><span class="kicker-rule"></span><span>LINHA DE CONGELADOS</span></div>
       <div class="frozen-grid">
         <div class="frozen-visual">
-          <img src="assets/pizza-vacuo.jpg" alt="Pizza napoletana congelada, pronta para aquecer, embalada a vácuo com o selo Impasto di Larsen" />
+          <img src="assets/pizza-vacuo-800.webp" srcset="assets/pizza-vacuo-800.webp 800w, assets/pizza-vacuo-1200.webp 1200w" sizes="(max-width: 700px) 100vw, 50vw" width="1200" height="900" loading="lazy" decoding="async" alt="Pizza napoletana congelada, pronta para aquecer, embalada a vácuo com o selo Impasto di Larsen" />
           <span class="frozen-tag">Embalado a vácuo</span>
         </div>
         <div class="frozen-copy">
@@ -162,7 +164,7 @@
     </section>
 
     <section class="process section-pad" id="processo">
-      <div class="process-image"><video data-src="assets/sequencia-pizza.mp4" poster="assets/massa.jpg" muted loop playsinline preload="none" aria-label="Sequência da pizza napoletana sendo preparada e assada no forno a lenha"></video></div>
+      <div class="process-image"><video data-src="assets/sequencia-pizza.mp4" poster="assets/massa.webp" muted loop playsinline preload="none" aria-label="Sequência da pizza napoletana sendo preparada e assada no forno a lenha"></video></div>
       <div class="process-copy"><div class="section-kicker light"><span>03</span><span class="kicker-rule"></span><span>O CORAÇÃO DA PIZZA</span></div><h2>Tempo também<br /><em>é ingrediente.</em></h2><p>Impasto significa massa em italiano. E é nela que tudo começa: na fermentação lenta, na textura que se constrói, na borda que nasce do cuidado.</p><div class="process-stats"><div><strong>48h</strong><span>de fermentação<br />a frio</span></div><div><strong>450°</strong><span>de calor para<br />o forno vivo</span></div><div><strong>100%</strong><span>feito à mão<br />por aqui</span></div></div><a class="text-link light-link" href="#chef">Conheça nossa assinatura <span>↗</span></a></div>
     </section>
 
@@ -176,25 +178,25 @@
         </div>
       </div>
       <div class="gallery-track">
-        <img src="assets/Impasto_di_Larsen_001.jpeg" alt="Pizza napoletana com quatro queijos e azeite trufado, servida em evento da Impasto di Larsen" loading="lazy" />
-        <img src="assets/Impasto_di_Larsen_002.jpeg" alt="Pizza napoletana artesanal recém-assada em evento da Impasto di Larsen" loading="lazy" />
-        <img src="assets/Impasto_di_Larsen_003.jpeg" alt="Pizza napoletana artesanal recém-assada em evento da Impasto di Larsen" loading="lazy" />
-        <img src="assets/Impasto_di_Larsen_005.jpeg" alt="Pizza napoletana com cogumelos frescos, servida em evento da Impasto di Larsen" loading="lazy" />
-        <img src="assets/Impasto_di_Larsen_007.jpeg" alt="Pizza napoletana artesanal recém-assada em evento da Impasto di Larsen" loading="lazy" />
-        <img src="assets/Impasto_di_Larsen_014.jpeg" alt="Pizza napoletana artesanal recém-assada em evento da Impasto di Larsen" loading="lazy" />
-        <img src="assets/Impasto_di_Larsen_015.jpeg" alt="Pizza napoletana artesanal recém-assada em evento da Impasto di Larsen" loading="lazy" />
-        <img src="assets/Impasto_di_Larsen_036.jpeg" alt="Pizza napoletana artesanal recém-assada em evento da Impasto di Larsen" loading="lazy" />
-        <img src="assets/Impasto_di_Larsen_051.jpeg" alt="Pizza napoletana artesanal recém-assada em evento da Impasto di Larsen" loading="lazy" />
-        <img src="assets/Impasto_di_Larsen_189.jpeg" alt="Pizza napoletana artesanal recém-assada em evento da Impasto di Larsen" loading="lazy" />
-        <img src="assets/Impasto_di_Larsen_doce_022.jpeg" alt="Pizza doce artesanal da Impasto di Larsen servida em evento" loading="lazy" />
-        <img src="assets/Impasto_di_Larsen_doce_026.jpeg" alt="Pizza doce artesanal da Impasto di Larsen servida em evento" loading="lazy" />
-        <img src="assets/Impasto_di_Larsen_doce_071.jpeg" alt="Pizza doce artesanal da Impasto di Larsen servida em evento" loading="lazy" />
+        <img src="assets/Impasto_di_Larsen_001.webp" width="600" height="799" decoding="async" alt="Pizza napoletana com quatro queijos e azeite trufado, servida em evento da Impasto di Larsen" loading="lazy" />
+        <img src="assets/Impasto_di_Larsen_002.webp" width="600" height="799" decoding="async" alt="Pizza napoletana artesanal recém-assada em evento da Impasto di Larsen" loading="lazy" />
+        <img src="assets/Impasto_di_Larsen_003.webp" width="600" height="799" decoding="async" alt="Pizza napoletana artesanal recém-assada em evento da Impasto di Larsen" loading="lazy" />
+        <img src="assets/Impasto_di_Larsen_005.webp" width="600" height="799" decoding="async" alt="Pizza napoletana com cogumelos frescos, servida em evento da Impasto di Larsen" loading="lazy" />
+        <img src="assets/Impasto_di_Larsen_007.webp" width="600" height="799" decoding="async" alt="Pizza napoletana artesanal recém-assada em evento da Impasto di Larsen" loading="lazy" />
+        <img src="assets/Impasto_di_Larsen_014.webp" width="600" height="799" decoding="async" alt="Pizza napoletana artesanal recém-assada em evento da Impasto di Larsen" loading="lazy" />
+        <img src="assets/Impasto_di_Larsen_015.webp" width="600" height="799" decoding="async" alt="Pizza napoletana artesanal recém-assada em evento da Impasto di Larsen" loading="lazy" />
+        <img src="assets/Impasto_di_Larsen_036.webp" width="600" height="799" decoding="async" alt="Pizza napoletana artesanal recém-assada em evento da Impasto di Larsen" loading="lazy" />
+        <img src="assets/Impasto_di_Larsen_051.webp" width="600" height="799" decoding="async" alt="Pizza napoletana artesanal recém-assada em evento da Impasto di Larsen" loading="lazy" />
+        <img src="assets/Impasto_di_Larsen_189.webp" width="600" height="799" decoding="async" alt="Pizza napoletana artesanal recém-assada em evento da Impasto di Larsen" loading="lazy" />
+        <img src="assets/Impasto_di_Larsen_doce_022.webp" width="600" height="1067" decoding="async" alt="Pizza doce artesanal da Impasto di Larsen servida em evento" loading="lazy" />
+        <img src="assets/Impasto_di_Larsen_doce_026.webp" width="600" height="799" decoding="async" alt="Pizza doce artesanal da Impasto di Larsen servida em evento" loading="lazy" />
+        <img src="assets/Impasto_di_Larsen_doce_071.webp" width="600" height="1333" decoding="async" alt="Pizza doce artesanal da Impasto di Larsen servida em evento" loading="lazy" />
       </div>
     </section>
 
     <section class="chef section-pad" id="chef">
       <div class="section-kicker"><span>05</span><span class="kicker-rule"></span><span>A ASSINATURA GASTRONÔMICA</span></div>
-      <div class="chef-grid"><div class="chef-copy"><h2>Chef Ivo<br /><em>Larsen Junior</em></h2><div class="chef-role">Personal Chef · Blumenau / SC</div><p>Por trás de cada pizza, existe alguém que escolheu fazer diferente: respeitando o tempo da massa, a origem dos ingredientes e o prazer de compartilhar uma mesa.</p><p class="muted">Do preparo à finalização, Ivo transforma técnica em acolhimento — e cada evento em uma memória que fica.</p><a class="button button-outline" href="#contato">Conversar com o chef <span>↗</span></a></div><div class="chef-portrait"><img src="assets/chef-ivo.jpeg" alt="Chef Ivo Larsen Junior, personal chef da Impasto di Larsen, na cozinha" /><div class="portrait-inner"><span>Chef Ivo<br />Larsen Junior</span></div></div></div>
+      <div class="chef-grid"><div class="chef-copy"><h2>Chef Ivo<br /><em>Larsen Junior</em></h2><div class="chef-role">Personal Chef · Blumenau / SC</div><p>Por trás de cada pizza, existe alguém que escolheu fazer diferente: respeitando o tempo da massa, a origem dos ingredientes e o prazer de compartilhar uma mesa.</p><p class="muted">Do preparo à finalização, Ivo transforma técnica em acolhimento — e cada evento em uma memória que fica.</p><a class="button button-outline" href="#contato">Conversar com o chef <span>↗</span></a></div><div class="chef-portrait"><img src="assets/chef-ivo.webp" width="800" height="1065" loading="lazy" decoding="async" alt="Chef Ivo Larsen Junior, personal chef da Impasto di Larsen, na cozinha" /><div class="portrait-inner"><span>Chef Ivo<br />Larsen Junior</span></div></div></div>
     </section>
 
     <section class="manifesto"><div class="manifesto-mark">✦</div><p>“Da massa nasce a experiência.<br /><em>E toda experiência começa à mesa.</em>”</p><span>— Impasto di Larsen</span></section>
@@ -231,7 +233,7 @@
     <section class="contact section-pad" id="contato"><div class="contact-head"><div class="section-kicker light"><span>07</span><span class="kicker-rule"></span><span>VAMOS CONVERSAR</span></div><h2>Seu próximo momento<br />especial começa <em>aqui.</em></h2><p>Conte um pouco sobre o seu evento ou peça informações sobre os nossos congelados.</p></div><form class="contact-form" onsubmit="return handleSubmit(event)"><label>Seu nome<input type="text" name="name" placeholder="Como podemos te chamar?" required /></label><label>O que você procura?<select name="interest" required><option value="" disabled selected>Selecione uma opção</option><option>Experiência para evento</option><option value="Congelados">Congelados (massa de pizza e nhoque)</option><option>Quero saber mais</option></select></label><label>Mensagem<textarea name="message" rows="3" placeholder="Fale um pouco sobre o que você imagina..."></textarea></label><button class="button button-gold" type="submit">Enviar mensagem <span>↗</span></button><p class="form-feedback" aria-live="polite"></p></form></section>
   </main>
 
-  <footer class="site-footer"><div class="footer-brand"><img src="assets/logo-impasto2.png" alt="Logo Impasto di Larsen" /><span>Pizza Napoletana</span></div><div class="footer-meta"><span>Blumenau · Santa Catarina</span><a href="#topo" class="back-top">Voltar ao topo ↑</a></div><div class="footer-bottom"><span>© 2025 Impasto di Larsen</span><span>Chef Ivo Larsen Junior · Personal Chef</span><a href="http://www.instagram.com/impastodilarsen">Instagram</a></div></footer>
+  <footer class="site-footer"><div class="footer-brand"><img src="assets/logo-impasto2.png" width="300" height="300" loading="lazy" decoding="async" alt="Logo Impasto di Larsen" /><span>Pizza Napoletana</span></div><div class="footer-meta"><span>Blumenau · Santa Catarina</span><a href="#topo" class="back-top">Voltar ao topo ↑</a></div><div class="footer-bottom"><span>© 2025 Impasto di Larsen</span><span>Chef Ivo Larsen Junior · Personal Chef</span><a href="http://www.instagram.com/impastodilarsen">Instagram</a></div></footer>
   <script src="script.js"></script>
 </body>
 </html>
