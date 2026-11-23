@@ -9,7 +9,7 @@ document.querySelectorAll('.nav a').forEach(link => link.addEventListener('click
   menuToggle?.setAttribute('aria-expanded', 'false');
 }));
 
-const WHATSAPP_NUMBER = '5547996004771';
+const WHATSAPP_NUMBER = '5547996000771';
 
 // Conversões do Google Ads. Quando as ações de conversão forem criadas no
 // Google Ads, colar aqui o rótulo de cada uma (a parte depois da barra em
