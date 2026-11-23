@@ -37,6 +37,11 @@ function handleSubmit(event) {
   const interest = form.elements.interest.value;
   const message = form.elements.message.value.trim();
 
+  // Meta Pixel: todo envio do formulário abre o WhatsApp, então conta como Contato.
+  if (typeof fbq === 'function') {
+    fbq('track', 'Contact', { content_category: interest });
+  }
+
   if (interest === 'Experiência para evento') {
     registrarConversao('orcamento_evento', interest);
   } else if (interest === 'Congelados') {
